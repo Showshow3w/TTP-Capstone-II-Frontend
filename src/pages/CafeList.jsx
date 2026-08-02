@@ -26,7 +26,7 @@ function CafeList() {
     <div>
       <h1>Cafe List</h1>
       {cafes.map((cafe) => (
-        <div key={cafe.id}>
+        <div key={cafe.id} style={{ marginBottom: "2rem" }}>
           <h2>{cafe.cafeName}</h2>
           <Link to={`/cafes/${cafe.id}`}>View Details</Link>
         </div>
