@@ -4,6 +4,7 @@ import CafeList from "./pages/CafeList"
 import CafeDetail from "./pages/CafeDetail"
 import AddCafe from "./pages/AddCafe"
 import EditCafe from "./pages/EditCafe"
+import './App.css'
 
 function App() {
   return (
