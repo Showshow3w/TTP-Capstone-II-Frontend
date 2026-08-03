@@ -10,13 +10,14 @@ function App() {
   return (
     <BrowserRouter>
       <Nav />
-
-      <Routes>
-        <Route path="/" element={<CafeList />} />
-        <Route path="/cafes/:id" element={<CafeDetail />} />
-        <Route path="/add" element={<AddCafe />} />
-        <Route path="/edit/:id" element={<EditCafe />} />
-      </Routes>
+      <div className="page">
+        <Routes>
+          <Route path="/" element={<CafeList />} />
+          <Route path="/cafes/:id" element={<CafeDetail />} />
+          <Route path="/add" element={<AddCafe />} />
+          <Route path="/edit/:id" element={<EditCafe />} />
+        </Routes>
+      </div>
     </BrowserRouter>
   )
 }

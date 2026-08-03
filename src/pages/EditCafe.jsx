@@ -110,9 +110,9 @@ function EditCafe(){
                     Price Range:
                     <select value={priceRange} onChange={(e) => setPriceRange(e.target.value)}>
                         <option value="">Select...</option>
-                        <option value="$">$</option>
-                        <option value="$$">$$</option>
-                        <option value="$$$">$$$</option>
+                        <option value="$">$ - Affordable</option>
+                        <option value="$$">$$ - Moderate</option>
+                        <option value="$$$">$$$ - Expensive</option>
                     </select>
                 </label>
             </div>

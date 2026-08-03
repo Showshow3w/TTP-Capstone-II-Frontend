@@ -25,12 +25,14 @@ function CafeList() {
   return (
     <div>
       <h1>Cafe List</h1>
-      {cafes.map((cafe) => (
-        <div key={cafe.id} style={{ marginBottom: "2rem" }}>
-          <h2>{cafe.cafeName}</h2>
-          <Link to={`/cafes/${cafe.id}`}>View Details</Link>
-        </div>
+      <div className="cafe-list">
+        {cafes.map((cafe) => (
+            <div key={cafe.id} className="cafe-card">
+                <h2>{cafe.cafeName}</h2>
+                <Link to={`/cafes/${cafe.id}`}>View Details</Link>
+            </div>
       ))}
+      </div>
     </div>
   )
 }

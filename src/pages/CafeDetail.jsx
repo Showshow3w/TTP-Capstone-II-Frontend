@@ -33,18 +33,24 @@ function CafeDetail(){
         navigate("/")
     }
 
+    const priceLabels = {
+    "$": "Affordable",
+    "$$": "Moderate",
+    "$$$": "Expensive"
+}
+
   return (
-    <div>
+    <div className="detail-card">
       <h1>{cafe.cafeName}</h1>
       <p>Location: {cafe.location}</p>
       <p>Item Ordered: {cafe.itemOrdered}</p>
       <p>Rating: {cafe.rating}</p>
       <p>Would Return: {cafe.wouldReturn ? "Yes" : "No"}</p>
-      <p>Price Range: {cafe.priceRange}</p>
+      <p>Price Range: {cafe.priceRange} ({priceLabels[cafe.priceRange]})</p>
       <div className="actions">
         <Link to="/">Back to List</Link>
         <Link to={`/edit/${cafe.id}`}>Edit</Link>
-        <button onClick={handleDelete}>Delete</button>
+        <button className="delete-btn" onClick={handleDelete}>Delete</button>
       </div> 
     </div>
   )
