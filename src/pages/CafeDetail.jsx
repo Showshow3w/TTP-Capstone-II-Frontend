@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react"
 import { useParams, Link } from "react-router"
+import { useNavigate } from "react-router"
 
 function CafeDetail(){
     const {id} = useParams()
     const [cafe, setCafe] = useState(null)
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
+    const navigate = useNavigate()
 
 
     useEffect(() => {
@@ -24,6 +26,13 @@ function CafeDetail(){
     if (loading) return <p>Loading cafe...</p>
     if (error) return <p>Error: {error}</p>
 
+    const handleDelete = async () => {
+        await fetch (`http://localhost:3000/cafes/${id}`,{
+            method: "DELETE",
+        })
+        navigate("/")
+    }
+
   return (
     <div>
       <h1>{cafe.cafeName}</h1>
@@ -32,7 +41,11 @@ function CafeDetail(){
       <p>Rating: {cafe.rating}</p>
       <p>Would Return: {cafe.wouldReturn ? "Yes" : "No"}</p>
       <p>Price Range: {cafe.priceRange}</p>
-      <Link to="/">Back to List</Link>
+      <div className="actions">
+        <Link to="/">Back to List</Link>
+        <Link to={`/edit/${cafe.id}`}>Edit</Link>
+        <button onClick={handleDelete}>Delete</button>
+      </div> 
     </div>
   )
 }

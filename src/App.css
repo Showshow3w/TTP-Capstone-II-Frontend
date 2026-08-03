@@ -25,3 +25,14 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+.nav {
+    display: flex;
+    gap: 1rem;
+}
+
+.actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
